@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      Penerapan Metode Stack
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="dark">
+  <ion-item class="dark">
+    <ion-label floating >Masukkkan Stack</ion-label>
+    <ion-input type="text" [(ngModel)]="txtStack" ></ion-input>
+  </ion-item>
+  <ion-grid>
+    <ion-row>
+      <ion-col >
+        <button ion-button block (click)="onPush()" [disabled]="txtStack.length == 0" >PUSH</button>
+      </ion-col>
+      <ion-col >
+        <button ion-button block (click)="onPop()" color="danger" [disabled]="stack.length == 0" >POP</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-list no-lines text-wrap >
+    <ion-item color="primary">
+      <h2 style="text-align:center"> ======== List Stack ======== </h2>
+    </ion-item>
+    <ion-item *ngFor="let a of newStack" style="text-align: center" color="secondary" >
+     {{a}}
+    </ion-item>
+  </ion-list>
+
+</ion-content>
